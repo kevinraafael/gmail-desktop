@@ -69,11 +69,7 @@
 		"appId": "dev.timche.meru",
 		"mac": {
 			"category": "public.app-category.productivity",
-			"icon": "build/icon.icns",
-			"target": {
-				"target": "default",
-				"arch": ["x64", "arm64"]
-			}
+			"icon": "build/icon.icns"
 		},
 		"linux": {
 			"icon": "build/icons/",
