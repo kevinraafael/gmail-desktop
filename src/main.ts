@@ -64,11 +64,15 @@ class Main {
 			y: lastWindowState.bounds.y,
 			show: false,
 			titleBarStyle: platform.isMacOS ? "hiddenInset" : "hidden",
-			titleBarOverlay: {
-				color: "#111111",
-				symbolColor: "#fff",
-				height: APP_TITLEBAR_HEIGHT,
-			},
+			titleBarOverlay: !platform.isMacOS
+				? {
+						color: nativeTheme.shouldUseDarkColors ? "#0a0a0a" : "#ffffff",
+						symbolColor: nativeTheme.shouldUseDarkColors
+							? "#fafafa"
+							: "#0a0a0a",
+						height: APP_TITLEBAR_HEIGHT - 1,
+					}
+				: undefined,
 			darkTheme: nativeTheme.shouldUseDarkColors,
 			webPreferences: {
 				preload: path.join(
